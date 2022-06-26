@@ -3,7 +3,7 @@ const insertionSort = (unsortedData) => {
   for (let i = 1; i < unsortedData.length; i++) {
       const firstIndexData=unsortedData[i]
       let j=i-1
-      while(j>=0 && firstIndexData>unsortedData[j]){
+      while(j>=0 && firstIndexData<unsortedData[j]){ //ascending for now , change operator it will sort in descending
           unsortedData[j+1]=unsortedData[j];
           j-=1
       }
