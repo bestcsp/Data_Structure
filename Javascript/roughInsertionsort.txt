@@ -1,0 +1,27 @@
+const sortfunction = (data, subSortedArray) => {
+  // console.log("----> subsorted Array",subSortedArray,data)
+  if (!subSortedArray.length) subSortedArray.push(data);
+  else {
+    let dataPushedOrNot = false;
+    for (const element in subSortedArray) {
+      if (subSortedArray[element] > data) {
+        const temp = subSortedArray[element];
+        subSortedArray[element] = data;
+        subSortedArray.splice(element + 1, 0, temp);
+        dataPushedOrNot = true;
+        break;
+      }
+    }
+    if (!dataPushedOrNot) {
+      subSortedArray.push(data);
+    }
+  }
+};
+
+const insertionSort = (unsortedData) => {
+  const subSortedArray = [];
+  for (const data of unsortedData) {
+    sortfunction(data, subSortedArray);
+  }
+  return subSortedArray;
+};
