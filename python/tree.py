@@ -19,7 +19,7 @@ print("Inorder traversal")
 InOrd(root)
 print("Preorder traversal")
 
-def proder(root):
+def proder(root):# data and left child then right child 
     if root:        
         print(root.nodedata)
         proder(root.leftchild)
@@ -27,7 +27,7 @@ def proder(root):
 proder(root)
 print("PostOrder traversal")
 
-def PostOrder(root):
+def PostOrder(root):   #left child then right child and then data
     if root:        
         PostOrder(root.leftchild)
         PostOrder(root.rightchild)
